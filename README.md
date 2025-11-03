@@ -1,67 +1,114 @@
 # lucaspoli.github.io
 
 <!-- README for lucaspoli.github.io -->
-<!-- This README will render as your personal website on GitHub Pages -->
+<!-- CSS-only tabbed layout that works on GitHub Pages/Markdown -->
 
-<h1 align="center">Lucas Poli</h1>
+<style>
+  /* Container */
+  .tabs { max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .tabs h1 { text-align: center; margin-bottom: 0.25rem; }
+  .subtitle { text-align: center; color: #555; margin: 0 0 1.25rem 0; }
 
-<p align="center">
-  <img src="./b7e5cf8b-00ed-4fee-bdbd-cc862f5e6f7e.png" alt="Lucas Poli" width="200" style="border-radius: 50%;"><br>
-  <b>Research Consultant · Inter-American Development Bank</b><br>
-  <b>Specializing in Water, Sanitation & Solid Waste Policy</b><br>
-  <a href="mailto:poli.lucasluiz@gmail.com">poli.lucasluiz@gmail.com</a> •
-  <a href="https://www.linkedin.com/in/lucas-poli">LinkedIn</a> •
-  <a href="https://scholar.google.com/">Google Scholar</a>
+  /* Top nav */
+  .tab-nav { display: flex; gap: .5rem; justify-content: center; margin: 1rem 0 1.25rem; flex-wrap: wrap; }
+  .tab-nav a {
+    padding: .5rem .9rem; border: 1px solid #e1e4e8; border-radius: .6rem; text-decoration: none; color: #24292e;
+    background: #fff;
+  }
+  .tab-nav a.active { background: #0969da; border-color: #0969da; color: #fff; }
+
+  /* Sections */
+  .tab { display: none; }
+  .tab:target { display: block; }
+  /* Default (no hash) -> show summary */
+  .tab.default { display: block; }
+  /* Card-ish bits */
+  .card { border: 1px solid #e1e4e8; border-radius: .8rem; padding: 1rem; margin: 1rem 0; background: #fff; }
+  .center { text-align: center; }
+  .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 1px solid #e1e4e8; }
+  .badges a { margin-right: .5rem; text-decoration: none; }
+  .muted { color: #666; font-size: .95rem; }
+</style>
+
+<div class="tabs">
+
+<h1>Lucas Poli</h1>
+<p class="subtitle"><b>Research Consultant · Inter-American Development Bank</b><br>
+Specializing in Water, Sanitation & Solid Waste Policy</p>
+
+<p class="center badges">
+  <a href="mailto:poli.lucasluiz@gmail.com">poli.lucasluiz@gmail.com</a> ·
+  <a href="https://www.linkedin.com/in/lucas-poli">LinkedIn</a> ·
+  <a href="https://scholar.google.com/">Google Scholar</a> ·
+  <a href="https://github.com/lucaspoli">GitHub</a>
 </p>
 
-<p align="center">
-  <a href="#-summary">Summary</a> •
-  <a href="#-research">Research</a> •
-  <a href="#-cv">CV</a>
-</p>
+<!-- Nav uses :target; JS-free -->
+<div class="tab-nav">
+  <a href="#summary" id="link-summary">Summary</a>
+  <a href="#research" id="link-research">Research</a>
+  <a href="#cv" id="link-cv">CV</a>
+</div>
 
----
+<!-- SUMMARY TAB -->
+<section id="summary" class="tab default">
+  <div class="card center">
+    <img src="./image.jpeg" alt="Portrait of Lucas Poli" class="avatar"><br>
+    <p class="muted">Washington, DC · Portuguese · English · Spanish · German</p>
+  </div>
+  <div class="card">
+    <h3>Summary</h3>
+    <p>
+      I am a political economist focused on <b>resilient infrastructure for water quality and sanitation</b> in Latin America and the Caribbean.
+      My work examines how <b>institutional design, regulatory incentives, and behavioral factors</b> shape service continuity and environmental outcomes.
+      At the Inter-American Development Bank, I co-author research on water contamination, utility efficiency, and strategic compliance.
+    </p>
+    <ul>
+      <li><b>Focus:</b> Water quality, sanitation continuity, resilient infrastructure</li>
+      <li><b>Methods:</b> Causal inference, policy synthesis, monitoring & data systems</li>
+      <li><b>Current interests:</b> Last-mile sewer connections, continuity metrics, equity in WASH</li>
+    </ul>
+  </div>
+</section>
 
-## 🧭 Summary
+<!-- RESEARCH TAB -->
+<section id="research" class="tab">
+  <div class="card">
+    <h3>Selected Research</h3>
 
-I am a political economist specializing in **water quality, sanitation, and resilient infrastructure** in Latin America and the Caribbean.  
-My work focuses on how **institutional design, regulatory incentives, and behavioral factors** shape service continuity and environmental outcomes.  
-At the **Inter-American Development Bank (IDB)**, I co-author research on **water contamination, efficiency, and strategic regulatory compliance** by utilities.  
-I hold an **MSc in Political Economy** from the London School of Economics (with Distinction) and dual bachelor’s degrees in **Economics** (PUC-SP) and **Social Sciences** (USP).
+- <b>Strategic Oversampling and Regulatory Evasion in Brazil’s Water Sector</b> (forthcoming, IDB)  
+  Measures how utilities oversample clean sites to avoid contamination penalties; efficiency and compliance patterns.
 
-**Current focus areas:**
-- Resilient infrastructure for water and sanitation  
-- Governance and accountability in utility regulation  
-- Empirical methods for service continuity and contamination risk  
-- Behavioral and institutional drivers of service performance  
+- <b>Water Contamination and Learning Outcomes in Brazil</b> (in progress, IDB)  
+  Education impacts of contamination using administrative and assessment data.
 
----
+- <b>Regulating Water Quality in Latin America and the Caribbean</b> (2024, IDB Flagship)  
+  Regional assessment of standards vs. WHO guidelines; built an index for regulatory alignment.
 
-## 📚 Research
+- <b>Forecasting Urban Crime with Machine Learning</b> (Centre for Economic Performance, LSE)  
+  > Reduced prediction MAPE from 25% to 3% using >1M observations.
 
-### Selected Work
+  </div>
+</section>
 
-- **Strategic Oversampling and Regulatory Evasion in Brazil’s Water Sector** *(forthcoming, IDB)*  
-  Examines how Brazilian utilities strategically oversample clean sites to avoid contamination penalties.  
-  Uses stochastic frontier models to measure efficiency and compliance behavior.
+<!-- CV TAB -->
+<section id="cv" class="tab">
+  <div class="card">
+    <h3>Curriculum Vitae</h3>
+    <p>
+      Download the latest CV (PDF): <a href="./LUCAS_POLI_ACADEMIC_CV.pdf"><b>LUCAS_POLI_ACADEMIC_CV.pdf</b></a>
+    </p>
+  </div>
+</section>
 
-- **Water Contamination and Learning Outcomes in Brazil** *(work in progress, IDB)*  
-  Estimates the causal impact of water contamination on student test performance using a staggered difference-in-differences design.
+</div>
 
-- **Regulating Water Quality in Latin America and the Caribbean** *(2024, IDB Flagship Report)*  
-  Co-authored cross-country analysis on the alignment of national water quality standards with WHO guidelines.  
-  Developed a regional index to benchmark regulatory stringency and enforcement.
-
-- **Forecasting Urban Crime with Machine Learning** *(Centre for Economic Performance, LSE)*  
-  Built predictive models for the Metropolitan Police using >1M observations; reduced mean absolute percentage error from 25% to 3%.
-
----
-
-## 📄 CV
-
-**Download full CV:** [POLI_CV.pdf](./POLI_CV%20(2).pdf)
-
----
-
-All content and layout are defined in this README file.  
-You can update sections, upload new images or publications, and they will appear automatically.
+<!-- Small helper so the active tab link looks highlighted without JS -->
+<style>
+  :target ~ .tab-nav a { /* reset */ }
+  #summary:target ~ .tab-nav #link-summary,
+  #research:target ~ .tab-nav #link-research,
+  #cv:target ~ .tab-nav #link-cv { background:#0969da; border-color:#0969da; color:#fff; }
+  /* When no hash, pretend Summary is active */
+  .tab.default ~ .tab-nav #link-summary { background:#0969da; border-color:#0969da; color:#fff; }
+</style>
