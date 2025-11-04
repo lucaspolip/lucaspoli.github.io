@@ -103,7 +103,7 @@ Specializing in Water, Sanitation & Solid Waste Policy</p>
   <div class="card">
     <h3>Curriculum Vitae</h3>
     <p>
-      Download the latest CV (PDF): <a href="./LUCAS_POLI_ACADEMIC_CV.pdf"><b>LUCAS_POLI_ACADEMIC_CV.pdf</b></a>
+      Download the latest CV (PDF): <a href="./POLI_ACADEMIC_CV.pdf"><b>POLI_ACADEMIC_CV.pdf</b></a>
     </p>
     <h4>Highlights</h4>
     <ul>
