@@ -30,7 +30,6 @@
     .tab.default { display:block; }
 
     /* If any tab is targeted, hide the default */
-    /* Supported by modern browsers; great for GH Pages */
     .tabs:has(.tab:target) .tab.default { display:none; }
 
     /* Card styling */
@@ -39,21 +38,22 @@
     .center { text-align:center; }
     .avatar { width:160px; height:160px; border-radius:50%; object-fit:cover; border:1px solid var(--border); }
 
-    /* Nav (placed AFTER sections so :target can style it) */
+    /* Nav */
     .tab-nav { display:flex; gap:.5rem; justify-content:center; margin:1rem 0 0; flex-wrap:wrap; }
     .tab-nav a {
-      padding:.5rem .9rem; border:1px solid var(--border); border-radius:.6rem; text-decoration:none; color:var(--ink); background:#fff;
+      padding:.5rem .9rem; border:1px solid var(--border); border-radius:.6rem;
+      text-decoration:none; color:var(--ink); background:#fff;
     }
-    /* Active state via :target */
     #summary:target ~ .tab-nav #link-summary,
-    #research:target ~ .tab-nav #link-research,
-    #cv:target ~ .tab-nav #link-cv { background:var(--brand); border-color:var(--brand); color:#fff; }
-    /* When no hash, pretend Summary is active */
-    .tabs:not(:has(.tab:target)) .tab-nav #link-summary { background:var(--brand); border-color:var(--brand); color:#fff; }
+    #research:target ~ .tab-nav #link-research {
+      background:var(--brand); border-color:var(--brand); color:#fff;
+    }
+    .tabs:not(:has(.tab:target)) .tab-nav #link-summary {
+      background:var(--brand); border-color:var(--brand); color:#fff;
+    }
 
     .muted { color:var(--muted); font-size:.95rem; }
     ul { padding-left:1.2rem; }
-    /* Make markdown-style list inside cards neat on GH Pages */
     .card ul { margin:.5rem 0 0; }
   </style>
 </head>
@@ -67,30 +67,26 @@
     <p class="badges">
       <a href="mailto:poli.lucasluiz@gmail.com">poli.lucasluiz@gmail.com</a> ·
       <a href="https://www.linkedin.com/in/lucas-poli">LinkedIn</a> ·
-      <a href="https://scholar.google.com/">Google Scholar</a> ·
       <a href="https://github.com/lucaspoli">GitHub</a>
     </p>
 
     <div class="tabs">
-      <!-- Sections FIRST so :target can style the nav below -->
-      <!-- SUMMARY (default) -->
+      <!-- SUMMARY -->
       <section id="summary" class="tab default">
         <div class="card center">
           <img src="./image.jpeg" alt="Portrait of Lucas Poli" class="avatar"><br>
-          <p class="muted">Washington, DC · Portuguese · English · Spanish · German</p>
         </div>
         <div class="card">
           <h3>Summary</h3>
           <p>
-            I am a political economist focused on <b>resilient infrastructure for water quality and sanitation</b> in Latin America and the Caribbean.
-            My work examines how <b>institutional design, regulatory incentives, and behavioral factors</b> shape service continuity and environmental outcomes.
-            At the Inter-American Development Bank, I co-author research on water contamination, utility efficiency, and strategic compliance.
+            Economist and political scientist with a master’s degree in Political Economy from the London School of Economics (LSE). 
+            Currently working as a researcher in the Knowledge Team of the Water, Sanitation, and Solid Waste Division at the 
+            Inter-American Development Bank (IDB). My research interests include WASH policies in Latin America and the Caribbean, 
+            impact evaluation of water and sanitation projects, nature-based solutions for resilient infrastructure, and how regulatory 
+            incentives shape water providers’ behavior. At the IDB, I co-author research on water contamination, utility efficiency, 
+            and strategic compliance. I also have prior experience in the economics of crime, the political economy of deforestation, 
+            and quantitative text analysis.
           </p>
-          <ul>
-            <li><b>Focus:</b> Water quality, sanitation continuity, resilient infrastructure</li>
-            <li><b>Methods:</b> Causal inference, policy synthesis, monitoring &amp; data systems</li>
-            <li><b>Current interests:</b> Last-mile sewer connections, continuity metrics, equity in WASH</li>
-          </ul>
         </div>
       </section>
 
@@ -113,21 +109,11 @@
         </div>
       </section>
 
-      <!-- CV -->
-      <section id="cv" class="tab">
-        <div class="card">
-          <h3>Curriculum Vitae</h3>
-          <p>
-            Download the latest CV (PDF): <a href="./POLI_ACADEMIC_CV.pdf"><b>POLI_ACADEMIC_CV.pdf</b></a>
-          </p>
-        </div>
-      </section>
-
-      <!-- NAV after sections so :target can style it -->
+      <!-- Navigation -->
       <nav class="tab-nav" aria-label="Section navigation">
         <a href="#summary" id="link-summary">Summary</a>
         <a href="#research" id="link-research">Research</a>
-        <a href="#cv" id="link-cv">CV</a>
+        <a href="./POLI_ACADEMIC_CV.pdf" target="_blank" id="link-cv" rel="noopener noreferrer">CV</a>
       </nav>
     </div>
   </div>
